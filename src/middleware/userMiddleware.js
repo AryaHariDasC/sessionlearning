@@ -5,13 +5,13 @@ const authMiddleware = (req, res, next) => {
   const tokens = req.session.token; // token stored in session
 
   if (!tokens) {
-   
+
     return res.status(401).json({ message: "Access denied. No token found in session." });
   }
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ message: "Access denied. No token provided." });
   }
-  
+
 
   const token = authHeader.split(" ")[1]; // Extract the token after "Bearer"
 

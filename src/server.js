@@ -11,7 +11,7 @@ app.use(express.json());
 //Configure session
 app.use(
   session({
-    secret: process.env.secret, //REplace with a secure key
+    secret: process.env.SECRET, //REplace with a secure key
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }, // Set true in production with HTTPS
